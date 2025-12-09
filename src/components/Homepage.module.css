@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Kedebideri&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nata+Sans:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--content-bg);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Left Sidebar - Fixed & Blue */
+.profileSection {
+  width: 420px;
+  min-width: 420px;
+  background: var(--sidebar-bg);
+  height: 100vh;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center alignment */
+  text-align: center;
+  height: 100%;
+}
+
+.profileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Circle */
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border: 4px solid rgba(255,255,255,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileName {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.profileTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.achievementsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.achievementItem {
+  background: white;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.ctaButton {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-top: auto;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: #000;
+}
+
+/* Right Content - Beige & Scrollable */
+.contentSection {
+  flex: 1;
+  background: #efece6; /* Beige matching screenshot */
+  height: 100vh;
+  overflow-y: auto;
+  padding: 3rem 4rem;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.projectCard {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.cardBadge {
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f5f5f5;
+}
+
+.cardPrice {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #000;
+}
+
+.cardButton {
+  background: #000;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.cardButton:hover {
+  transform: rotate(-45deg);
+  background: #333;
+}
+
+/* Skills Section */
+.skillsSection {
+    margin-bottom: 4rem;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+.skillItem {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.skillItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.skillIconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.skillCategory {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.skillItems {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Ratings Section */
+.ratingsSection {
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ratingsTopGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.flowerCard {
+  background: #fff;
+  border-radius: 24px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Aesthetic Flower Animation */
+.flowerWrapper {
+    position: relative;
+    width: 120px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.plantStem {
+    width: 4px;
+    height: 100px;
+    background: #6ba375;
+    border-radius: 4px;
+    position: relative;
+}
+
+.plantLeaf {
+    position: absolute;
+    color: #8cb369;
+    font-size: 24px;
+}
+
+.leaf1 { bottom: 30px; left: -15px; animation: swayLeft 3s infinite ease-in-out; }
+.leaf2 { bottom: 50px; right: -15px; animation: swayRight 4s infinite ease-in-out; }
+.leaf3 { bottom: 70px; left: -12px; animation: swayLeft 3.5s infinite ease-in-out; }
+
+.plantFlower {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #e5989b;
+    font-size: 40px;
+    animation: bloom 3s infinite alternate ease-in-out;
+    filter: drop-shadow(0 4px 6px rgba(229, 152, 155, 0.4));
+}
+
+@keyframes swayLeft {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(0deg); }
+}
+
+@keyframes swayRight {
+    0%, 100% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+}
+
+@keyframes bloom {
+    0% { transform: translateX(-50%) scale(1); }
+    100% { transform: translateX(-50%) scale(1.1); }
+}
+
+.statCard {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Testimonials Grid */
+.testimonialsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonialCard {
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonialHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonialRating {
+  color: #000;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 2px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.testimonialText {
+  color: #1a1a1a;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.testimonialAuthor {
+  font-weight: 700;
+  color: #000;
+  font-size: 1rem;
+}
+
+.testimonialDate {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* About Section Socials */
+.aboutSection {
+    background: #efece6;
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.aboutSocials {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.socialBtn {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Shadow for button look */
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.socialBtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* About Details */
+.aboutDetails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.aboutItem {
+    padding: 0;
+}
+
+.aboutLabel {
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.aboutValue {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+/* Social Buttons - Square Style */
+.socialSquareBtn {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.socialSquareBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* Achievements Section (Right Side) */
+.achievementsSection {
+  margin-bottom: 3rem;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.achievementCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  color: #1a1a1a;
+  transition: transform 0.2s;
+}
+
+.achievementCard:hover {
+  transform: translateX(4px);
+}
+
+.achievementHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.achievementIcon {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.achievementDescription {
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+    margin-left: 0.4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    overflow: visible;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .profileSection {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    padding: 3rem 1.5rem;
+  }
+
+  /* Right content scroll logic reset for mobile since the whole page scrolls */
+  .contentSection {
+    height: auto;
+    padding: 2rem 1.5rem;
+    overflow: visible;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ratingsTopGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialsContainer {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,39 @@
+:root {
+  --sidebar-bg: #92c5f9;
+  --content-bg: #efece6;
+  --card-bg: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --accent-color: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', 'Inter', sans-serif; /* DM Sans looks closer to the screenshot */
+  background-color: var(--content-bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow: hidden; /* Prevent body scroll, handle in containers on Desktop */
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow: auto; /* Allow scrolling on mobile */
+  }
+}
+
+/* Hide scrollbars globally */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
