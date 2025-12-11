@@ -11,7 +11,11 @@ import {
     FaDiscord,
     FaInstagram,
     FaYoutube,
-    FaTrophy
+    FaTrophy,
+    FaHeartbeat,
+    FaCar,
+    FaBlog,
+    FaCode
 } from "react-icons/fa"
 import { SiMongodb, SiDocker } from "react-icons/si"
 import { GiFlowerPot } from "react-icons/gi"
@@ -23,7 +27,7 @@ const Homepage = () => {
             description: "AI-driven healthcare platform",
             tech: "Node.js, Express, MongoDB, React",
             duration: "Full Stack",
-            icon: FaStar,
+            icon: FaHeartbeat,
             image: "/healthcare-app-dashboard.jpg",
             link: "https://github.com/narasimhaa44/VitalSync"
         },
@@ -32,7 +36,7 @@ const Homepage = () => {
             description: "Smart carpooling platform",
             tech: "MERN Stack, OAuth 2.0, Socket.IO",
             duration: "Backend Focus",
-            icon: FaGithub,
+            icon: FaCar,
             image: "/carpooling-platform-map.jpg",
             link: "https://github.com/narasimhaa44/Green-Way"
         },
@@ -41,7 +45,7 @@ const Homepage = () => {
             description: "Full-stack blog platform",
             tech: "Node.js, Express, MongoDB, JWT",
             duration: "Full Stack",
-            icon: FaLinkedin,
+            icon: FaBlog,
             image: "/blog-website-interface.jpg",
             link: "https://github.com/narasimhaa44/Blogging"
         },
@@ -50,7 +54,7 @@ const Homepage = () => {
             description: "230+ problems solved",
             tech: "Data Structures, Algorithms",
             duration: "Competitive Programming",
-            icon: FaLeaf,
+            icon: FaCode,
             image: "/coding-algorithm-visualization.jpg",
             link: "https://leetcode.com/u/Lakshminarasimha_44/"
         },
@@ -88,7 +92,7 @@ const Homepage = () => {
                 <div className={styles.profileContent}>
                     <div className={styles.profileImage}>
                         {/* New Profile Image */}
-                        <img src="/images/profile.jpg" alt="Lakshmi Narasimha Reddy" className={styles.profileImg} />
+                        <img src="/images/pic.jpeg" alt="Lakshmi Narasimha Reddy" className={styles.profileImg} />
                     </div>
 
                     <h1 className={styles.profileName}>Lakshmi Narasimha Reddy</h1>
@@ -114,23 +118,33 @@ const Homepage = () => {
                     {projects.map((project, index) => {
                         const IconComponent = project.icon
                         return (
-                            <div key={index} className={styles.projectCard}>
-                                <div>
-                                    <div className={styles.cardHeader}>
-                                        <span className={styles.cardBadge}>{project.duration}</span>
+                            <div key={index} className={`${styles.projectCard} ${project.isFeatured ? styles.featuredCard : ''}`}>
+                                <div className={styles.cardContent}>
+                                    <div>
+                                        <div className={styles.cardHeader}>
+                                            <div className={styles.projectIconWrapper}>
+                                                <IconComponent size={24} />
+                                            </div>
+                                            <span className={styles.cardBadge}>{project.duration}</span>
+                                        </div>
+
+                                        <h3 className={styles.cardTitle}>{project.title}</h3>
+                                        <p className={styles.cardDescription}>{project.description}</p>
+                                        <p className={styles.cardTech} style={{ fontSize: '0.85rem', color: '#94a3b8', marginBottom: '1rem' }}>{project.tech}</p>
                                     </div>
 
-                                    <h3 className={styles.cardTitle}>{project.title}</h3>
-                                    <p className={styles.cardDescription}>{project.description}</p>
-                                    <p className={styles.cardTech} style={{ fontSize: '0.85rem', color: '#94a3b8', marginBottom: '1rem' }}>{project.tech}</p>
+                                    <div className={styles.cardFooter}>
+                                        <span className={styles.cardPrice}>View Project</span>
+                                        <a href={project.link} target="_blank" className={styles.cardButton}>
+                                            <FaArrowRight size={14} />
+                                        </a>
+                                    </div>
                                 </div>
-
-                                <div className={styles.cardFooter}>
-                                    <span className={styles.cardPrice}>View Project</span>
-                                    <a href={project.link} target="_blank" className={styles.cardButton}>
-                                        <FaArrowRight size={14} />
-                                    </a>
-                                </div>
+                                {project.isFeatured && project.image && (
+                                    <div className={styles.cardImageWrapper}>
+                                        <img src={project.image} alt={project.title} className={styles.cardImage} />
+                                    </div>
+                                )}
                             </div>
                         )
                     })}
